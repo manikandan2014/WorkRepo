@@ -3,6 +3,7 @@ XmpVersion: 14.7
 VerMgmt: 14.7
 IntStyle: default
 Flow: ise
+ModuleSearchPath: D:/motor/WORK/hardware/ipcore/xilinx/components/pcores/axi_openmac_v1_00_a/../../../
 ModuleSearchPath: D:/OpenMAC/ipcore/xilinx
 MHS File: system.mhs
 Architecture: spartan6

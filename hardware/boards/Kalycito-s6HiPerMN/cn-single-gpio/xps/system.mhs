@@ -51,6 +51,9 @@
  PORT axi_openmac_0_oSmi_nPhyRst_pin = axi_openmac_0_oSmi_nPhyRst, DIR = O, VEC = [1:0]
  PORT axi_openmac_0_oSmi_clk_pin = axi_openmac_0_oSmi_clk, DIR = O, VEC = [1:0]
  PORT axi_openmac_0_ioSmi_dio_pin = axi_openmac_0_ioSmi_dio, DIR = IO, VEC = [1:0]
+ PORT axi_gpio_1_GPIO_INOUT_pin = axi_gpio_1_GPIO_IO, DIR = IO, VEC = [7:0]
+ PORT axi_timer_0_PWM0_pin = axi_timer_0_PWM0, DIR = O
+ PORT GPIO_OUT_0_GPIO_IO_O_pin = GPIO_OUT_0_GPIO_IO_O, DIR = O, VEC = [7:0]
 
 
 BEGIN proc_sys_reset
@@ -343,5 +346,37 @@ BEGIN axi_openmac
  PORT S_AXI_MAC_PKT_ACLK = clk_100_0000MHzPLL0
  PORT MAC_IRQ = axi_openmac_0_MAC_IRQ
  PORT TIMER_IRQ = axi_openmac_0_TIMER_IRQ
+END
+
+BEGIN axi_timer
+ PARAMETER INSTANCE = PWM_0
+ PARAMETER HW_VER = 1.03.a
+ PARAMETER C_BASEADDR = 0x41c00000
+ PARAMETER C_HIGHADDR = 0x41c0ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHzPLL0
+ PORT PWM0 = axi_timer_0_PWM0
+END
+
+BEGIN axi_gpio
+ PARAMETER INSTANCE = GPIO_OUT_0
+ PARAMETER HW_VER = 1.01.b
+ PARAMETER C_BASEADDR = 0x40040000
+ PARAMETER C_HIGHADDR = 0x4004ffff
+ PARAMETER C_GPIO_WIDTH = 8
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHzPLL0
+ PORT GPIO_IO_O = GPIO_OUT_0_GPIO_IO_O
+END
+
+BEGIN axi_gpio
+ PARAMETER INSTANCE = GPIO_INOUT_1
+ PARAMETER HW_VER = 1.01.b
+ PARAMETER C_BASEADDR = 0x40080000
+ PARAMETER C_HIGHADDR = 0x4008ffff
+ PARAMETER C_GPIO_WIDTH = 8
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHzPLL0
+ PORT GPIO_IO = axi_gpio_1_GPIO_IO
 END
 

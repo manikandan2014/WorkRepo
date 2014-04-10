@@ -169,7 +169,44 @@ NET axi_openmac_0_oSmi_nPhyRst_pin<1> LOC= G22 | IOSTANDARD=LVCMOS25;
 NET axi_openmac_0_ioSmi_dio_pin<1> LOC= F19 | IOSTANDARD=LVCMOS25;
 NET axi_openmac_0_oSmi_clk_pin<1> LOC= F18 | IOSTANDARD=LVCMOS25;
 
+###############################################################################
+# GPIO Output Ports
+###############################################################################
 
+# S3 GPIO BANK
+ 
+NET GPIO_OUT_0_GPIO_IO_O_pin<0> LOC = A19 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<1> LOC = A18 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<2> LOC = A17 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<3> LOC = A5 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<4> LOC = A4 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<5> LOC = A3 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<6> LOC = A2 | IOSTANDARD=LVCMOS25;
+NET GPIO_OUT_0_GPIO_IO_O_pin<7> LOC = Y22 | IOSTANDARD=LVCMOS25;
+
+###############################################################################
+# GPIO Input/Output Ports 
+###############################################################################
+
+# S5 GPIO BANK
+
+NET axi_gpio_1_GPIO_INOUT_pin<0> LOC = R22 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<1> LOC = R20 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<2> LOC = R19 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<3> LOC = P22 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<4> LOC = P21 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<5> LOC = AB15 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<6> LOC = AB11 | IOSTANDARD=LVCMOS25;
+NET axi_gpio_1_GPIO_INOUT_pin<7> LOC = AA10 | IOSTANDARD=LVCMOS25;
+
+
+###############################################################################
+# PWM OUTPUT
+###############################################################################
+
+# S3 GPIO BANK
+
+NET axi_timer_0_PWM0_pin LOC = Y21 |IOSTANDARD=LVCMOS25;
 
 
 
